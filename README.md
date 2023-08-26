@@ -1,6 +1,8 @@
 # Instructions
 
-Repository containing assignment instructions
+**[Submission instructions](submission-instructions/submission-instructions.md)**
+
+Assignment instructions:
 
 | Assignment | Instructions | Scripting API | Released |
 | --- | --- | --- | --- |
@@ -11,4 +13,4 @@ Repository containing assignment instructions
 | H-Interaction  | [Instructions](xrc-assignments-interaction/xrc-assignments-interaction.md) | | No |
 
 ---
-[Submission instructions](submission-instructions/submission-instructions.md)
+
