@@ -267,92 +267,91 @@ The cubes rotate around the three axis directions, using the same angle $\theta$
 When using the `angle` property of `AngleGenerator` in your scripts, remember to convert to radians where needed.
     
 ## Tasks
-1. **Custom matrix rotation**
+### 1. Custom matrix rotation
         
-    Rotate the blue cube by implementing your own matrix class `MyMatrix`, which is used to rotate the object's vertices through the `MyMatrixRotation.cs` script, which is attached to blue cube.
+Rotate the blue cube by implementing your own matrix class `MyMatrix`, which is used to rotate the object's vertices through the `MyMatrixRotation.cs` script, which is attached to blue cube.
         
-    - **Approach**
+**Approach**
             
-        The three standard rotation matrices are given in SL (3.16, 3.17, 3.18). In our case we are using the same angle value $\theta$ in each frame for all rotations:
+The three standard rotation matrices are given in SL (3.16, 3.17, 3.18). In our case we are using the same angle value $\theta$ in each frame for all rotations:
             
-        $$
-        \begin{aligned}
-            R_{z} &=
-            \begin{bmatrix}
-            \cos{\theta} & -\sin{\theta} & 0\\
-            \sin{\theta} & \cos{\theta}& 0\\
-            0 & 0 & 1\\
-            \end{bmatrix}
-            \end{aligned}
-            $$
+$$
+\begin{aligned}
+R_{z} &=
+\begin{bmatrix}
+\cos{\theta} & -\sin{\theta} & 0\\
+\sin{\theta} & \cos{\theta}& 0\\
+0 & 0 & 1\\
+\end{bmatrix}
+\end{aligned}
+$$
             
-        $$
-            \begin{aligned}
-            R_{x} &=
-            \begin{bmatrix}
-            1 & 0 & 0\\
-            0 & \cos{\theta} & -\sin{\theta} \\
-            0 & \sin{\theta} & \cos{\theta}\\
-            \end{bmatrix}
-            \end{aligned}
-            $$
+$$
+\begin{aligned}
+R_{x} &=
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & \cos{\theta} & -\sin{\theta} \\
+0 & \sin{\theta} & \cos{\theta}\\
+\end{bmatrix}
+\end{aligned}
+$$
             
-        $$
-            \begin{aligned}
-            R_{y} &=
-            \begin{bmatrix}
-            \cos{\theta} & 0 & \sin{\theta}\\
-            0 & 1 & 0\\
-            -\sin{\theta} & 0 & \cos{\theta}\\
-            \end{bmatrix}
-            \end{aligned}
-            $$
+$$
+\begin{aligned}
+R_{y} &=
+\begin{bmatrix}
+\cos{\theta} & 0 & \sin{\theta}\\
+0 & 1 & 0\\
+-\sin{\theta} & 0 & \cos{\theta}\\
+\end{bmatrix}
+\end{aligned}
+$$
             
-        where $R_z$, $R_x$, and $R_y$ represent *roll*, *pitch*, and *yaw*, respectively. The angle value is changed between frames, resulting in a continuous rotation.
+where $R_z$, $R_x$, and $R_y$ represent *roll*, *pitch*, and *yaw*, respectively. The angle value is changed between frames, resulting in a continuous rotation.
             
             
-        > ⚠️ For matching the gray cube's rotation, remember to follow the order of rotation given in *Description.*
+> ⚠️ For matching the gray cube's rotation, remember to follow the order of rotation given in *Description.*
                 
-        You will need to multiply the three matrices (in the correct order) and multiply the resulting matrix with each point (vertex), therefore rotating the cube.
+You will need to multiply the three matrices (in the correct order) and multiply the resulting matrix with each point (vertex), therefore rotating the cube.
             
-2. **Custom quaternion rotation**
+### 2. Custom quaternion rotation
         
-    Rotate the red cube by implementing your own quaternion class `MyQuaternion`, which is used to rotate the object's vertices through the `MyQuaternionRotation.cs`, script which is attached to red cube.
+Rotate the red cube by implementing your own quaternion class `MyQuaternion`, which is used to rotate the object's vertices through the `MyQuaternionRotation.cs`, script which is attached to red cube.
         
-    - **Approach**
+**Approach**
             
-        > ⚠️ Note that the textbook defines quaternions as $q = (a, b, c, d)$ where $a$ is the scalar, and $b,c,d$ the three vector components. This is different from Unity's definition of $q = (x, y, z, w)$ where $x,y,z$ are the vector components and $w$ the scalar. 
-        You are not using Unity's `Quaternion` class here, but this is worth keeping in mind.
+> ⚠️ Note that the textbook defines quaternions as $q = (a, b, c, d)$ where $a$ is the scalar, and $b,c,d$ the three vector components. This is different from Unity's definition of $q = (x, y, z, w)$ where $x,y,z$ are the vector components and $w$ the scalar. You are not using Unity's `Quaternion` class here, but this is worth keeping in mind.
             
             
-        Let $(\mathbf{v},\theta)$ be an axis-angle representation of a 3D rotation, then this can be represented by the following quaternion:
+Let $(\mathbf{v},\theta)$ be an axis-angle representation of a 3D rotation, then this can be represented by the following quaternion:
             
-        $$
-            q = \left( \cos \frac{\theta}{2}, v_1\sin{\frac{\theta}{2}},v_2\sin{\frac{\theta}{2}},v_3\sin{\frac{\theta}{2}} \right)
-        $$
+$$
+q = \left( \cos \frac{\theta}{2}, v_1\sin{\frac{\theta}{2}},v_2\sin{\frac{\theta}{2}},v_3\sin{\frac{\theta}{2}} \right)
+$$
             
-        You will have to implement this conversion in the `AngleAxis(float angle, Vector3 axis)` method in the `MyQuaternion` class.
+You will have to implement this conversion in the `AngleAxis(float angle, Vector3 axis)` method in the `MyQuaternion` class.
             
-        For any two quaternions, $q_1$ and $q_2$, let $q_3 = q_1 * q_2$ denote the product, which is defined as
+For any two quaternions, $q_1$ and $q_2$, let $q_3 = q_1 * q_2$ denote the product, which is defined as
             
-        $$
-        \begin{aligned}
-        a_3 = a_1 a_2 - b_1 b_2 - c_1 c_2 - d_1 d_2 \\
-        b_3 = a_1 b_2 + a_2 b_1 + c_1 d_2 - c_2 d_1 \\
-        c_3 = a_1 c_2 + a_2 c_1 + b_2 d_1 - b_1 d_2 \\
-        d_3 = a_1 d_2 + a_2 d_1 + b_1 c_2 - b_2 c_1
-        \end{aligned}
-        $$
+$$
+\begin{aligned}
+a_3 = a_1 a_2 - b_1 b_2 - c_1 c_2 - d_1 d_2 \\
+b_3 = a_1 b_2 + a_2 b_1 + c_1 d_2 - c_2 d_1 \\
+c_3 = a_1 c_2 + a_2 c_1 + b_2 d_1 - b_1 d_2 \\
+d_3 = a_1 d_2 + a_2 d_1 + b_1 c_2 - b_2 c_1
+\end{aligned}
+$$
             
-        You will use this to implement the `*` operator overloading in your `MyQuaternion` class.
+You will use this to implement the `*` operator overloading in your `MyQuaternion` class.
             
-        Once you have set all three quaternions, you will multiply them to get the final quaternion. You will use that quaternion to rotate the vertices of the object by applying quaternion multiplication as
+Once you have set all three quaternions, you will multiply them to get the final quaternion. You will use that quaternion to rotate the vertices of the object by applying quaternion multiplication as
             
-        $$
-            p^\prime = q*p*q^{-1}
-        $$
+$$
+p^\prime = q*p*q^{-1}
+$$
             
-        where $p$ is the point in quaternion format, and $q^{-1}$ is the inverse quaternion. You will have to implement the static `Inverse(...)` method in `MyQuaternion` which returns the inverse of a quaternion.
+where $p$ is the point in quaternion format, and $q^{-1}$ is the inverse quaternion. You will have to implement the static `Inverse(...)` method in `MyQuaternion` which returns the inverse of a quaternion.
             
 ## Scripts
 
