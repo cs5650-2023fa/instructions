@@ -1,7 +1,6 @@
 # H-Geometry
 
-**[INFO 5340 / CS 5650](https://www.cs.cornell.edu/courses/cs5650/): Virtual and Augmented Reality**
-Fall 2022, Cornell Tech
+**[INFO 5340 / CS 5650](https://www.cs.cornell.edu/courses/cs5650/): Virtual and Augmented Reality** Cornell Tech
 
 ---
 
