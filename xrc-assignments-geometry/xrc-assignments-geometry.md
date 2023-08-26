@@ -191,12 +191,12 @@ The floor tiles (prefab) have all been placed in the scene. Your only modificati
 ## Tasks
 ### 1. Radial color effect
         
-    Implement a color effect visualizing the player's proximity to a floor tile, as shown in the solution video.
+Implement a color effect visualizing the player's proximity to a floor tile, as shown in the solution video.
         
-   - **Approach**
-       - Let $d$ be the distance from the floor tile to the player's head.
-         - Let $r$ be a distance threshold
-         - Let $\alpha$ be the color modifier
+#### Approach
+- Let $d$ be the distance from the floor tile to the player's head.
+ - Let $r$ be a distance threshold
+ - Let $\alpha$ be the color modifier
 
 $$
 \alpha = \max\left(\frac{r-d}{r},0\right)
@@ -212,29 +212,26 @@ B &= \alpha
 \end{aligned}
 $$
                 
-            - In the code, $r$ is already set by the constant `k_DistanceThreshold`
-                
-            
-            If all of the above is implemented correctly, the radial color effect will be exactly as shown in the solution video.
+In the code, $r$ is already set by the constant `k_DistanceThreshold`.
+                            
+If all of the above is implemented correctly, the radial color effect will be exactly as shown in the solution video.
             
 ### 2. Directional color effect
         
-        Implement a color effect visualizing the player's forward direction, as shown in the solution video.
+Implement a color effect visualizing the player's forward direction, as shown in the solution video.
         
-        - **Approach**
+#### Approach
             
-            Let $p$ represent the position of a floor tile. 
+Let $p$ represent the position of a floor tile. 
             
-            Let $a$ represent the position of the player.
+- Let $a$ represent the position of the player.          
+- Let $\mathbf{v}$ represent the unit vector in the direction from $p$ to $a$, that is $\mathbf{v} = a - p$          
+- Let $\mathbf{f}$ represent the forward vector of the player. This can be found using `transform.forward`, which is a unit vector in the forward direction of the object's local coordinate system.
+
+[!NOTE]
+You are only interested in the direction in the $xy$ plane (the player's model only rotates around the up axis). So, before calculating the dot product you should modify the y-component of $\mathbf{v}$ to match the y-component of $\mathbf{f}$, which essentially discards the effect of the y-component, resulting in $\mathbf{v}^\prime$.
             
-            Let $\mathbf{v}$ represent the unit vector in the direction from $p$ to $a$, that is $\mathbf{v} = a - p$
-            
-            Let $\mathbf{f}$ represent the forward vector of the player. This can be found using `transform.forward`, which is a unit vector in the forward direction of the object's local coordinate system.
-            
-            
-            ⚠️ You are only interested in the direction in the $xy$ plane (the player's model only rotates around the up axis). So, before calculating the dot product you should modify the y-component of $\mathbf{v}$ to match the y-component of $\mathbf{f}$, which essentially discards the effect of the y-component, resulting in $\mathbf{v}^\prime$.
-            
-            Then the dot product $\mathbf{v}^\prime \cdot \mathbf{f}$ will indicate the collinearity (opposite) of the two vectors. You will evaluate this outcome and modify the tile color based on this value, that is, if the dot product is in a certain range or beyond a certain threshold, then modify the color. This modification should be setting the green channel to 1, and leave other channels unchanged. This will turn that tile yellow (since it was already red), as shown in the solution video.
+    Then the dot product $\mathbf{v}^\prime \cdot \mathbf{f}$ will indicate the collinearity (opposite) of the two vectors. You will evaluate this outcome and modify the tile color based on this value, that is, if the dot product is in a certain range or beyond a certain threshold, then modify the color. This modification should be setting the green channel to 1, and leave other channels unchanged. This will turn that tile yellow (since it was already red), as shown in the solution video.
             
 ## Scripts
     
