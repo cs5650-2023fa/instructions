@@ -346,11 +346,11 @@ $$
 You will use this to implement the `*` operator overloading in your `MyQuaternion` class.
             
 Once you have set all three quaternions, you will multiply them to get the final quaternion. You will use that quaternion to rotate the vertices of the object by applying quaternion multiplication as
-         
+
 $$
 p^\prime = q*p*q^{-1}
 $$
-            
+          
 where $p$ is the point in quaternion format, and $q^{-1}$ is the inverse quaternion. You will have to implement the static `Inverse(...)` method in `MyQuaternion` which returns the inverse of a quaternion.
             
 ## Scripts
