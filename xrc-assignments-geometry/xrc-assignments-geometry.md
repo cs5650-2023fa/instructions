@@ -228,10 +228,10 @@ Let $p$ represent the position of a floor tile.
 - Let $\mathbf{v}$ represent the unit vector in the direction from $p$ to $a$, that is $\mathbf{v} = a - p$          
 - Let $\mathbf{f}$ represent the forward vector of the player. This can be found using `transform.forward`, which is a unit vector in the forward direction of the object's local coordinate system.
 
-> [!NOTE]
-> You are only interested in the direction in the $xy$ plane (the player's model only rotates around the up axis). So, before calculating the dot product you should modify the y-component of $\mathbf{v}$ to match the y-component of $\mathbf{f}$, which essentially discards the effect of the y-component, resulting in $\mathbf{v}^\prime$.
+
+**Note:** You are only interested in the direction in the $xy$ plane (the player's model only rotates around the up axis). So, before calculating the dot product you should modify the y-component of $\mathbf{v}$ to match the y-component of $\mathbf{f}$, which essentially discards the effect of the y-component, resulting in $\mathbf{v}^\prime$.
             
-    Then the dot product $\mathbf{v}^\prime \cdot \mathbf{f}$ will indicate the collinearity (opposite) of the two vectors. You will evaluate this outcome and modify the tile color based on this value, that is, if the dot product is in a certain range or beyond a certain threshold, then modify the color. This modification should be setting the green channel to 1, and leave other channels unchanged. This will turn that tile yellow (since it was already red), as shown in the solution video.
+Then the dot product $\mathbf{v}^\prime \cdot \mathbf{f}$ will indicate the collinearity (opposite) of the two vectors. You will evaluate this outcome and modify the tile color based on this value, that is, if the dot product is in a certain range or beyond a certain threshold, then modify the color. This modification should be setting the green channel to 1, and leave other channels unchanged. This will turn that tile yellow (since it was already red), as shown in the solution video.
             
 ## Scripts
     
