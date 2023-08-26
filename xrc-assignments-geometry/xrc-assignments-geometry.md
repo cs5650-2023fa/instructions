@@ -320,7 +320,7 @@ You will need to multiply the three matrices (in the correct order) and multiply
 Rotate the red cube by implementing your own quaternion class `MyQuaternion`, which is used to rotate the object's vertices through the `MyQuaternionRotation.cs`, script which is attached to red cube.
         
 **Approach**
-            
+
 > ⚠️ Note that the textbook defines quaternions as $q = (a, b, c, d)$ where $a$ is the scalar, and $b,c,d$ the three vector components. This is different from Unity's definition of $q = (x, y, z, w)$ where $x,y,z$ are the vector components and $w$ the scalar. You are not using Unity's `Quaternion` class here, but this is worth keeping in mind.
             
             
