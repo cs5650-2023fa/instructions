@@ -6,7 +6,6 @@ Fall 2022, Cornell Tech
 ---
 
 
-
 **Before you start**
 - See Canvas for due date, repository link, and grading rubric. 
 - Read the assignment instructions (this document) carefully, from start to finish. 
@@ -190,35 +189,35 @@ Your task is to implement the following two modifications of the floor color.
 The floor tiles (prefab) have all been placed in the scene. Your only modification takes place in the script, not in the scene hierarchy.
     
 ## Tasks
-1. **Radial color effect**
+### 1. Radial color effect
         
     Implement a color effect visualizing the player's proximity to a floor tile, as shown in the solution video.
         
-    - **Approach**
-        - Let $d$ be the distance from the floor tile to the player's head.
-             - Let $r$ be a distance threshold
-            - Let $\alpha$ be the color modifier
+   - **Approach**
+       - Let $d$ be the distance from the floor tile to the player's head.
+         - Let $r$ be a distance threshold
+         - Let $\alpha$ be the color modifier
+
+$$
+\alpha = \max\left(\frac{r-d}{r},0\right)
+$$
             
-            $$
-            \alpha = \max\left(\frac{r-d}{r},0\right)
-            $$
-            
-            - You should then use $\alpha$ to modify the color as follows:
+You should then use $\alpha$ to modify the color as follows:
                 
-                $$
-                \begin{aligned}
-                R &= 1 - \alpha \\
-                G &= 0 \\
-                B &= \alpha 
-                \end{aligned}
-                $$
+$$
+\begin{aligned}
+R &= 1 - \alpha \\
+G &= 0 \\
+B &= \alpha 
+\end{aligned}
+$$
                 
             - In the code, $r$ is already set by the constant `k_DistanceThreshold`
                 
             
             If all of the above is implemented correctly, the radial color effect will be exactly as shown in the solution video.
             
-    2. **Directional color effect**
+### 2. Directional color effect
         
         Implement a color effect visualizing the player's forward direction, as shown in the solution video.
         
