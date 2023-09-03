@@ -27,7 +27,7 @@ flowchart TD;
 
 
 ## Assignment repository
-Make sure you have your solution committed to the main branch on your auto-generated repo on GitHub.
+Make sure you have your solution committed to the default branch on your auto-generated repo on GitHub. For most assignments, the default branch is either named 'student' or 'main' branch, and will be the only branch after initializing your repository.
 A snapshot of your repo will be automatically timestamped on GitHub Classroom at the deadline. Since the process is automatic, any work committed to the repo after the deadline will not be considered for submission.
 
 ## Assignment video
