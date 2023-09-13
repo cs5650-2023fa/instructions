@@ -11,6 +11,5 @@ Assignment instructions:
 | H-Rendering  | [Instructions](xrc-assignments-rendering/xrc-assignments-rendering.md) | No |
 | H-Locomotion  | [Instructions](xrc-assignments-locomotion/xrc-assignments-locomotion.md) | Yes |
 | H-Interaction  | [Instructions](xrc-assignments-interaction/xrc-assignments-interaction.md) | Yes |
----
 
 Instruction links become active when assignments have been released
