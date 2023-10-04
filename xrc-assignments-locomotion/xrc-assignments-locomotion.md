@@ -54,7 +54,7 @@ SL : Steve LaValle - [Virtual Reality](http://lavalle.pl/vr/) (2016), Chapter 10
 **This assignment provides a [Scripting API](https://xrcollaboratory.github.io/xrc-assignments-locomotion/api/XRC.Assignments.Locomotion.html)**. You can use this scipting API to familiarize yourself with the project and relevant classes and method. The scripting API is a representation of the code comments found within the scripts.
 
 ## Unit testing
-> ⚠️ Note: This assignment contains unit tests. Make sure to run all unit tests. See submission instructions for details.
+### Note: This assignment contains unit tests. Make sure to run all unit tests. See submission instructions for details.
 
 # Scenes
 ## `Locomotion`
