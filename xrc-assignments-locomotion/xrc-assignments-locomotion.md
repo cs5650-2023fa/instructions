@@ -24,7 +24,7 @@ Watch the **[solution video](https://drive.google.com/file/d/1q_t9Aee3dxBB-b_Me6
 
 Your objective is to replicate the full locomotion system seen in the solution video.
 
-**Project APK**: You will need to build your final solution to the Meta Quest, and submit the .apk file. Please refer to the Quest [building instructions](https://developer.oculus.com/documentation/unity/unity-build/) for details on how to build your project. **Your APK file should go in *Assets/Builds* folder.**
+**Project APK**: You will need to build your final solution to the Meta Quest, and submit the .apk file. Please refer to the Quest [building instructions](https://developer.oculus.com/documentation/unity/unity-build/) for details on how to build your project. **Your APK file should go in *Builds* folder in the root of your Unity project - not the root of Assets folder.** If the Builds does not exist you will have to create one, and save your APKs there. Note that this folder and APK file names are ignored by the git settings in your project. You will submit the APK as a Google Drive link,
 
 > ⚠️ Building the project to the Meta Quest takes time and could potentially raise unexpected issues! Please test build your project as soon as possible, and build it frequently as you progresses to make building-related debugging easier. **Please leave enough time in the end for the final build**.
 
