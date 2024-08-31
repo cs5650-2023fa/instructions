@@ -3,7 +3,7 @@
 **[INFO 5340 / CS 5650](https://www.cs.cornell.edu/courses/cs5650/): Virtual and Augmented Reality** Cornell Tech
 
 ---
-
+- Test **[link to another repo](../../xrc/README.md)** test.
 
 **Before you start**
 - See Canvas for due date, repository link, and grading rubric. 
